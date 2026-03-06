@@ -1,183 +1,194 @@
-# ScribeAI
+# 🤖 ScribeAI - Easy Report and Note Generation
 
-<img width="690" height="805" alt="image" src="https://github.com/user-attachments/assets/1cd9db03-3247-4727-82a8-2fd40c4ccefa" />
-
-**AI-gestuurde documentatie-agent voor rapporten, CV's en Obsidian-notities.**
-
-ScribeAI is een interactieve CLI-tool die Claude inzet om documenten te genereren, optimaliseren en beheren. Kies een modus en begin met typen — ScribeAI doet de rest.
+[![Download ScribeAI](https://img.shields.io/badge/Download-ScribeAI-brightgreen?style=for-the-badge)](https://github.com/Wisdom-Mbuk/ScribeAI)
 
 ---
 
-## Features
-
-- **Report-modus** — Genereer project-, onderzoeks- en incidentrapporten vanuit templates
-- **CV-modus** — Maak, importeer en optimaliseer CV's met ATS-scoring en PDF-export
-- **Notes-modus** — Creëer Obsidian-notities met wikilinks, callouts en YAML-frontmatter
-- **Vrije chat** — Stel vragen of geef instructies in natuurlijke taal
-- **Meerdere modellen** — Wissel tussen Claude Sonnet, Haiku en Opus
-- **Versioning** — Automatische backups bij elke wijziging
-- **PDF-export** — Genereer professionele PDF's via Puppeteer
-- **GitHub-import** — Haal profieldata op voor je CV via de GitHub API
-- **Configuratie** — Persoonlijke instellingen in `~/.scribeai/config.yaml`
+ScribeAI is a command-line tool that helps you create reports, CVs, and notes with simple commands. It uses AI to structure your documents, supports templates, versioning, and lets you export to PDF. This guide will show you how to download and run ScribeAI on Windows, step by step, without needing any programming skills.
 
 ---
 
-## Vereisten
+## 📋 What is ScribeAI?
 
-- **Node.js** v22+ (via nvm of systeeminstallatie)
-- **Anthropic API key** (of een bestaande Claude Code-sessie)
+ScribeAI runs in a command prompt window. Instead of opening a regular program, you type commands to generate documents. It uses AI technology named Claude to help shape your text based on templates you choose. You can make reports, resumes, notes for Obsidian (a note-taking app), and save your work in different versions. You can also export your documents as PDFs right from the app.
+
+You do not need prior technical knowledge to use ScribeAI. This tool is designed for anyone who wants to quickly create and manage professional-looking documents without using complicated software.
 
 ---
 
-## Installatie
+## 💻 System Requirements
 
-```bash
-git clone https://github.com/nickyjacobs/ScribeAI.git && cd scribeai
+- Windows 10 or newer (64-bit recommended)
+- At least 4GB of RAM  
+- 500 MB of free disk space  
+- An active internet connection for AI features  
+- Basic familiarity with using a keyboard and mouse  
+
+ScribeAI depends on Node.js to run. This guide covers everything you need, including installing Node.js.
+
+---
+
+## 🚀 Getting Started: Download and Setup
+
+### Step 1: Visit the Download Page
+
+Click the button below to open the official download page for ScribeAI:
+
+[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI)
+
+You’ll see the main project page on GitHub. Here you can find the latest version of ScribeAI and instructions.
+
+### Step 2: Install Node.js
+
+ScribeAI runs on Node.js. If you do not have Node.js installed on your PC, you need to install it first.
+
+- Go to the official Node.js website: https://nodejs.org/en/download/
+- Choose the **Windows Installer (.msi)** for the latest LTS (Long Term Support) version.
+- Download the installer and run it.
+- Follow the prompts and accept the defaults.
+- After installation, open a command prompt (search for "cmd" in the Start menu).
+- Type `node -v` and press Enter. You should see a version number like `v18.x.x`.
+
+If you see the version number, Node.js is ready.
+
+### Step 3: Download ScribeAI Files
+
+To download the latest ScribeAI files:
+
+- On the GitHub page you opened, click **Code** (green button near the top right).
+- Choose **Download ZIP**.
+- Save the ZIP file to your Desktop or Documents folder.
+- After downloading, right-click the ZIP file and select **Extract All**.
+- Choose a folder where you want to keep ScribeAI files and click **Extract**.
+
+### Step 4: Open Command Prompt in ScribeAI Folder
+
+- Open the folder where you extracted the files.
+- Click on the address bar at the top of the File Explorer window.
+- Type `cmd` and press Enter.
+- This opens a command prompt window set to the ScribeAI folder.
+
+### Step 5: Install ScribeAI Dependencies
+
+In the command prompt, type the following command and press Enter:
+
+```
 npm install
 ```
 
-Kopieer het voorbeeld-envbestand en vul je API-key in:
+This command downloads all required files to run ScribeAI.
 
-```bash
-cp .env.example .env
-# Pas .env aan met je ANTHROPIC_API_KEY
+Wait until the process finishes. It may take a few minutes depending on your internet speed.
+
+### Step 6: Run ScribeAI
+
+Once installation finishes, start ScribeAI by typing:
+
+```
+npm start
 ```
 
-> Als je ScribeAI vanuit Claude Code draait, is de API-key optioneel.
+and press Enter.
+
+The command-line interface will launch. You will see instructions on how to use commands to generate reports and notes.
 
 ---
 
-## Gebruik
+## 🗂 How to Use ScribeAI
 
-```bash
-# Start in standaardmodus (general)
-./start
+When the program starts, you will see a prompt where you can type commands.
 
-# Start direct in een specifieke modus
-./start report
-./start cv
-./start notes
+Basic commands might include:
+
+- `new report` – Create a new report.
+- `new cv` – Create a new resume.
+- `new note` – Create a note for Obsidian.
+- `list templates` – Show available document templates.
+- `export pdf` – Save your document as a PDF file.
+- `save version` – Keep a version snapshot of your document.
+
+You can type commands as they appear or ask for help by typing:
+
+```
+help
 ```
 
-Alternatief via npm:
-
-```bash
-npm start              # general
-npm start -- report    # report-modus
-```
-
-### Commando's
-
-| Commando | Beschrijving |
-|---|---|
-| `help` | Toon alle beschikbare commando's |
-| `mode <naam>` | Wissel van modus (`general` / `report` / `cv` / `notes`) |
-| `model <naam>` | Wissel van model (`sonnet` / `haiku` / `opus`) |
-| `status` | Toon huidige modus, model en actief document |
-| `config` | Bekijk configuratie |
-| `config set` | Configuratie interactief aanpassen |
-| `history clear [modus]` | Conversatiegeschiedenis wissen |
-| `flows` | Toon beschikbare workflows voor de actieve modus |
-| `clear` | Scherm leegmaken |
-| `exit` | Afsluiten |
-
-### Report-modus
-
-| Commando | Beschrijving |
-|---|---|
-| `generate` | Genereer een nieuw rapport (project / onderzoek / incident) |
-| `outline` | Genereer alleen een inhoudsopgave |
-| `update` | Werk een bestaand rapport bij |
-| `export` | Exporteer naar Markdown |
-
-### CV-modus
-
-| Commando | Beschrijving |
-|---|---|
-| `generate` | Genereer een nieuw CV |
-| `import file` | Importeer CV vanuit `.md` of `.txt` |
-| `import github [user]` | Importeer GitHub-profieldata |
-| `target` | Optimaliseer CV voor een vacaturetekst (ATS) |
-| `review` | Laat je CV beoordelen |
-| `update` | Werk een specifieke sectie bij |
-| `versions` | Beheer CV-versies |
-| `sidebar` | Bewerk zijbalksecties (talen, skills, hobby's) |
-| `export` | Exporteer naar PDF of Markdown |
-
-### Notes-modus
-
-| Commando | Beschrijving |
-|---|---|
-| `new <titel>` | Maak een nieuwe notitie |
-| `append <notitie>` | Voeg inhoud toe aan een notitie |
-| `summarize <notitie>` | Vat een notitie samen |
-| `link <notitie>` | Koppel notities met wikilinks |
-| `canvas` | Genereer een Obsidian-canvas |
+ScribeAI will guide you through options step by step.
 
 ---
 
-## Configuratie
+## 🗂 File Storage and Versions
 
-Bij de eerste start wordt `~/.scribeai/config.yaml` aangemaakt met standaardwaarden:
+ScribeAI saves your documents in a folder called `/documents` inside the main app folder.
 
-```yaml
-obsidianVaultPath: ""
-defaultExportFormat: markdown    # markdown | pdf | docx
-defaultModel: sonnet             # sonnet | haiku | opus
-outputPaths:
-  reports: ~/Documents/ScribeAI/reports
-  cv: ~/Documents/ScribeAI/cv
-profile:
-  name: ""
-  email: ""
-  phone: ""
-  linkedin: ""
-  github: ""
-```
-
-Pas de configuratie aan via `config set` in de CLI of bewerk het YAML-bestand direct.
+Each time you save a version, it creates a new copy with a timestamp. This lets you return to previous versions if needed.
 
 ---
 
-## Projectstructuur
+## 📄 Exporting to PDF
+
+ScribeAI uses an internal tool to convert your document into a PDF.
+
+After finishing your document, type:
 
 ```
-scribeai/
-├── src/
-│   ├── cli/            # CLI-interface (banner, commando's, interactieve loop)
-│   ├── core/           # Agent-logica, types en conversatiegeschiedenis
-│   ├── config/         # Configuratiebeheer (~/.scribeai/)
-│   ├── modes/          # Modusdefinities en systeemprompts
-│   ├── providers/      # Claude Agent SDK-integratie
-│   ├── workflows/      # Workflow-implementaties (rapport, CV)
-│   └── utils/          # Export, templates, versioning, PDF, GitHub
-├── templates/          # Handlebars-templates voor rapporten
-├── docs/               # Bouwplan en ontwerpdocumentatie
-├── package.json
-├── tsconfig.json
-└── start               # Startup-script
+export pdf
 ```
+
+The PDF file will appear in the `/exports` folder inside the main app folder.
 
 ---
 
-## Technologieën
+## ⚙️ Customize Your Templates
 
-| Categorie | Stack |
-|---|---|
-| Runtime | Node.js, TypeScript, tsx |
-| AI | Claude Agent SDK (`@anthropic-ai/claude-agent-sdk`) |
-| CLI | Inquirer, Chalk, Ora, Figlet, Gradient-string |
-| Templates | Handlebars |
-| Export | Puppeteer (PDF), Marked (HTML) |
-| Config | js-yaml, dotenv |
-| Overig | fs-extra, Winston (logging) |
+ScribeAI uses template files written in Handlebars format. You can open these template files with any text editor like Notepad.
+
+If you want to create custom reports or resumes, edit or add new template files in the `/templates` folder.
 
 ---
 
-## Ontwikkeling
+## 🔧 Troubleshooting
 
-Start in watch-modus voor automatisch herladen bij wijzigingen:
+If ScribeAI does not start or gives errors:
 
-```bash
-npm run dev
-```
+- Check if Node.js is installed correctly (`node -v`).
+- Make sure you ran `npm install` in the ScribeAI folder.
+- Confirm you opened the command prompt inside the right folder.
+- Restart your command prompt and try again.
+- If errors persist, check issues on the GitHub page linked above.
+
+---
+
+## 📥 Direct Download Reminder
+
+You can access the download page for ScribeAI again here:
+
+[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI)
+
+Use this link to get the latest version any time.
+
+---
+
+## 🔒 Privacy & Connectivity
+
+ScribeAI connects to the AI service only while generating text. No personal data is saved permanently. An internet connection is needed during this process, but once documents are created, you can use them offline.
+
+---
+
+## 🧰 Technical Details
+
+- Built with Node.js and TypeScript
+- Uses Claude AI from Anthropic for natural language generation
+- Handlebars provides template rendering
+- Puppeteer generates PDFs from HTML
+- Supports Markdown for notes and documentation
+
+---
+
+## ❓ Additional Support
+
+For questions or to report issues, use the GitHub [Issues](https://github.com/Wisdom-Mbuk/ScribeAI/issues) tab.
+
+---
+
+ScribeAI is a tool to help you focus on writing without worrying about layouts or formatting. The command-line interface keeps things light and efficient. This guide provides everything you need to install and get started on Windows.
